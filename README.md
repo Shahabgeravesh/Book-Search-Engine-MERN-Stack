@@ -9,7 +9,7 @@ Usage of Google Books API to create an Graql API with Apollo Server. MERN stack 
 * Express
 * React
 * Apollo Server
-* Graphql
-* Mongodb
+* GraphQL
+* MongoDB
 * Mongoose
 * Dotenv
