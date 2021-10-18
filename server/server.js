@@ -3,8 +3,8 @@ const path = require('path');
 //import apollo server
 const { ApolloServer } = require('apollo-server-express');
 // import typeDefs and resolvers
-const { typeDefs, resolvers} = require('./schemas');
-const {authMiddleware} = require('./utils/auth');
+const { typeDefs, resolvers } = require('./schemas');
+const { authMiddleware } = require('./utils/auth');
 
 //db connection
 const db = require('./config/connection');
@@ -42,8 +42,8 @@ app.get('*', (req, res) => {
 });
 
 db.once('open', () => {
-  app.listen(PORT, () => {
+  app.listen(PORT || process.env.NODE_ENV, () => {
     console.log(`API server running on port ${PORT}!`);
-    console.log(`Use GraphQL at http://localhost:${PORT}${server.graphqlPath}`);
+    console.log(`Use GraphQL at http://localhost:${PORT || process.env.NODE_ENV}${server.graphqlPath}`);
   });
 });
